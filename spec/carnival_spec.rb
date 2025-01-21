@@ -34,5 +34,17 @@ RSpec.describe Carnival do
             @carnival1.add_ride(@ride3)
             expect(@carnival1.rides).to eq([@ride1, @ride2, @ride3])
         end
+
+        it '#most_popular_ride' do
+            @carnival1.add_ride(@ride1)
+            @carnival1.add_ride(@ride2)
+            @carnival1.add_ride(@ride3)
+            @visitor1.add_preference(:gentle)
+            @ride1.board_rider(@visitor1)
+            @ride2.board_rider(@visitor1)
+            @ride1.board_rider(@visitor1)
+            expect(@carnival1.most_popular_ride).to eq('Carousel')
+            
+        end
     end
 end
