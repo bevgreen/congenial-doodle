@@ -9,4 +9,16 @@ class Visitor
         @spending_money = spending_money.delete("$").to_f
         @preferences = []
     end
+
+    def add_preference(preference)
+        @preferences << preference
+    end
+
+    def tall_enough?(height_threshold)
+        if height_threshold <= @height
+            true
+        else
+            false
+        end
+    end
 end
