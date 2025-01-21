@@ -43,7 +43,7 @@ RSpec.describe Carnival do
             @ride1.board_rider(@visitor1)
             @ride2.board_rider(@visitor1)
             @ride1.board_rider(@visitor1)
-            expect(@carnival1.most_popular_ride).to eq('Carousel')
+            expect(@carnival1.most_popular_ride).to eq(@ride1)
         end
 
         it '#most_profitable_ride' do
@@ -54,7 +54,7 @@ RSpec.describe Carnival do
             @ride1.board_rider(@visitor1)
             @ride2.board_rider(@visitor1)
             @ride1.board_rider(@visitor1)
-            expect(@carnival1.most_profitable_ride).to eq('Ferris Wheel')
+            expect(@carnival1.most_profitable_ride).to eq(@ride2)
         end
 
         it '#total_revenue' do

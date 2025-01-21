@@ -15,13 +15,13 @@ class Carnival
     def most_popular_ride
         @rides.max_by do |ride| 
             ride.rider_log.values.sum
-        end.name
+        end
     end
 
     def most_profitable_ride
         @rides.max_by do |ride|
             ride.total_revenue
-        end.name
+        end
     end
 
     def total_revenue
