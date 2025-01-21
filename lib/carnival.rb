@@ -23,4 +23,10 @@ class Carnival
             ride.total_revenue
         end.name
     end
+
+    def total_revenue
+        @rides.map do |ride|
+            ride.total_revenue
+        end.sum
+    end
 end

@@ -56,5 +56,16 @@ RSpec.describe Carnival do
             @ride1.board_rider(@visitor1)
             expect(@carnival1.most_profitable_ride).to eq('Ferris Wheel')
         end
+
+        it '#total_revenue' do
+            @carnival1.add_ride(@ride1)
+            @carnival1.add_ride(@ride2)
+            @carnival1.add_ride(@ride3)
+            @visitor1.add_preference(:gentle)
+            @ride1.board_rider(@visitor1)
+            @ride2.board_rider(@visitor1)
+            @ride1.board_rider(@visitor1)
+            expect(@carnival1.total_revenue).to eq(7)
+        end
     end
 end
