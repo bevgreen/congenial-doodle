@@ -31,7 +31,7 @@ RSpec.describe Visitor do
         end
     end
 
-    describe '#methods' do
+    describe 'methods' do
         
         it "#add_preference(preference)" do
             @visitor1.add_preference(:gentle)

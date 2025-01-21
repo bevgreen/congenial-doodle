@@ -24,6 +24,10 @@ RSpec.describe Carnival do
         it '#rides' do
             expect(@carnival1.rides).to eq([])
         end
+
+        it '#visitors' do
+            expect(@carnival1.visitors).to eq([])
+        end
     end
 
     describe 'methods' do
@@ -81,5 +85,19 @@ RSpec.describe Carnival do
             @ride3.board_rider(@visitor3)
             expect(@carnival1.total_revenue).to eq(13)
         end
+
+        it '#add_visitor' do #helper method
+            @carnival1.add_visitor(@visitor1)
+            @carnival1.add_visitor(@visitor2)
+            @carnival1.add_visitor(@visitor3)
+            expect(@carnival1.visitors).to eq([@visitor1, @visitor2, @visitor3])
+        end
+
+        # xit '#summary' do
+        #     @carnival1.add_visitor(@visitor1)
+        #     @carnival1.add_visitor(@visitor2)
+        #     @carnival1.add_visitor(@visitor3)
+        #     expect(Carnival.summary).to be_a(Hash)
+        # end
     end
 end

@@ -1,11 +1,12 @@
 require 'pry'
 
 class Carnival 
-    attr_reader :duration, :rides
+    attr_reader :duration, :rides, :visitors
 
     def initialize(duration)
         @duration = duration
         @rides = []
+        @visitors = []
     end
 
     def add_ride(ride)
@@ -29,4 +30,14 @@ class Carnival
             ride.total_revenue
         end.sum
     end
+
+    def add_visitor(visitor) #helper method
+        @visitors << visitor
+    end
+
+    # def self.summary
+    #     summary = {}
+    #     binding.pry
+        
+    # end
 end

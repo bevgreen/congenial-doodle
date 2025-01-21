@@ -39,7 +39,7 @@ RSpec.describe Ride do
         end
     end
 
-    describe '#methods' do
+    describe 'methods' do
 
         it '#board_rider' do
             @visitor1.add_preference(:gentle)
